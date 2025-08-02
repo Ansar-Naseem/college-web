@@ -64,23 +64,27 @@ function scrollHero(direction, button) {
 
 // Product data with price
 const products = [
-  { id: 1, name: "Kurti Style A", image: "1.jpg", desc: "Elegant cotton kurti for everyday wear.", price: 799 },
-  { id: 2, name: "Kurti Style B", image: "2.jpg", desc: "Perfect for festivals and special occasions.", price: 999 },
-  { id: 3, name: "Kurti Style C", image: "3.jpg", desc: "Hand-embroidered with fine detailing.", price: 1199 },
-  { id: 4, name: "Kurti Style D", image: "4.jpg", desc: "Comfort meets style in this modern design.", price: 899 },
-  { id: 5, name: "Kurti Style E", image: "5.jpg", desc: "Simple and sleek for casual outings.", price: 749 },
-  { id: 6, name: "Kurti Style F", image: "6.jpg", desc: "A touch of elegance in every stitch.", price: 1099 },
-  { id: 7, name: "Kurti Style G", image: "7.jpg", desc: "Perfect for any season.", price: 899 }
+  { id: 1, name: "Kurti Style A", image: "4.jpg", desc: "Elegant design with traditional vibes.", price: 1099 },
+  { id: 2, name: "Kurti Style B", image: "34.jpg", desc: "Vibrant colors to brighten your day.", price: 1399 },
+  { id: 3, name: "Cotton Kurti", image: "6.jpg", desc: "Soft cotton fabric for all-day comfort.", price: 1299 },
+  { id: 4, name: "Kurti Style D", image: "25.jpg", desc: "Breathable and stylish for summers.", price: 1199 },
+  { id: 5, name: "Kurti Style E", image: "27.jpg", desc: "Subtle charm with modern tailoring.", price: 1499 },
+  { id: 6, name: "Kurti Style F", image: "35.jpg", desc: "Graceful look with detailed patterns.", price: 1399 },
+  { id: 7, name: "Kurti Style G", image: "12.jpg", desc: "Lightweight and easy to wear daily.", price: 1199 },
+  { id: 8, name: "Kurti Style G", image: "13.jpg", desc: "Chic and comfy for everyday fashion.", price: 1299 },
+  { id: 9, name: "Kurti Style G", image: "14.jpg", desc: "Trendy piece to enhance your style.", price: 1499 }
 ];
 
 const menProducts = [
-  { id: 101, name: "Kurta Style A", image: "8.jpg", desc: "Classic cotton kurta for daily comfort.", price: 899 },
-  { id: 102, name: "Kurta Style B", image: "9.jpg", desc: "Ideal for weddings and gatherings.", price: 1299 },
-  { id: 103, name: "Kurta Style C", image: "10.jpg", desc: "Minimalist design with modern cuts.", price: 999 },
-  { id: 104, name: "Kurta Style D", image: "11.jpg", desc: "Tradition blended with trend.", price: 1199 },
-  { id: 105, name: "Kurta Style E", image: "12.jpg", desc: "Effortless style for all occasions.", price: 1099 },
-  { id: 106, name: "Kurta Style F", image: "13.jpg", desc: "Lightweight and breathable fabric.", price: 849 },
-  { id: 107, name: "Kurta Style G", image: "14.jpg", desc: "Sharp looks with soft texture.", price: 949 }
+  { id: 101, name: "Kurta Style A", image: "44.jpg", desc: "Classic cotton kurta for daily comfort.", price: 899 },
+  { id: 102, name: "Kurta Style B", image: "36.jpg", desc: "Ideal for weddings and gatherings.", price: 1299 },
+  { id: 103, name: "Kurta Style C", image: "40.jpg", desc: "Minimalist design with modern cuts.", price: 999 },
+  { id: 104, name: "Kurta Style D", image: "41.jpg", desc: "Tradition blended with trend.", price: 1199 },
+  { id: 105, name: "Kurta Style E", image: "42.jpg", desc: "Effortless style for all occasions.", price: 1099 },
+  { id: 106, name: "Kurta Style F", image: "43.jpg", desc: "Lightweight and breathable fabric.", price: 849 },
+  { id: 107, name: "Kurta Style G", image: "21.jpg", desc: "Sharp looks with soft texture.", price: 949 },
+  { id: 108, name: "Kurta Style G", image: "22.jpg", desc: "Sharp looks with soft texture.", price: 949 },
+  { id: 109, name: "Kurta Style G", image: "23.jpg", desc: "Sharp looks with soft texture.", price: 949 }
 ];
 
 let cart = [];
