@@ -62,7 +62,7 @@ nav a:hover {
   color: #d27667;
 }
 
-nav .icon:hover{
+nav .icon:hover {
   color: orangered;
   cursor: pointer;
 
@@ -77,7 +77,7 @@ nav .icon:hover{
   cursor: pointer;
   font-weight: 600;
   margin: 0px 10px;
-  
+
 }
 
 .login-btn:hover {
@@ -85,10 +85,7 @@ nav .icon:hover{
 }
 
 
-header {
-  
-
-}
+header {}
 
 #toggleCartBtn {
   height: 40px;
@@ -235,11 +232,12 @@ header {
   margin-top: 70px;
   position: relative;
 }
-#home{
+
+#home {
   top: 25px;
 }
 
-#home-men{
+#home-men {
   bottom: 35px;
 }
 
@@ -553,7 +551,10 @@ footer .social-links a:hover {
     width: 90%;
   }
 
-  nav a, .login-btn, .cart-counter, #toggleCartBtn {
+  nav a,
+  .login-btn,
+  .cart-counter,
+  #toggleCartBtn {
     margin: 0.3rem 0.5rem;
   }
 
@@ -572,17 +573,20 @@ footer .social-links a:hover {
     font-size: 1rem;
   }
 
-#home h2{
+  #home h2 {
     margin-top: 150px;
   }
 
   .hero-scroll-container {
     padding: 0 0.5rem;
+
+    /* max-height: 30vh; */
   }
 
   .hero-card {
     min-width: 40%;
     max-width: 50%;
+  
   }
 }
 
