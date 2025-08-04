@@ -585,6 +585,11 @@ footer .social-links a:hover {
     font-size: 1rem;
   }
 
+  .hero video{
+    display: none;
+    visibility: hidden;
+  }
+
   #home h2 {
     margin-top: 150px;
   }
