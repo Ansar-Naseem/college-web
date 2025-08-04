@@ -344,6 +344,17 @@ header {}
   right: 0;
 }
 
+.hero video {
+  position: fixed;
+  right: 60px;
+  height: 30vh;
+  bottom: 0;
+  width: 20vw;
+  /* border: 10px solid gray; */
+  border-radius: 100px;
+  z-index: 1;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .hero-scroll-container {
