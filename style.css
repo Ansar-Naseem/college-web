@@ -68,6 +68,49 @@ nav .icon:hover {
 
 }
 
+/* marquee {
+  position: absolute;
+  top: 100px;
+  z-index: 1;
+} */
+
+.marquee-container {
+  position: absolute;
+  /* top: 84px; */
+  z-index: 1;
+  margin-top: -34px;
+
+  width: 100%;
+  /* background: linear-gradient(to right, #ff9a9e, #fad0c4); */
+  color: #de7369;
+  overflow: hidden;
+  white-space: nowrap;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.marquee-text {
+  /* position: absolute;
+  top: 90px;
+  z-index: 1; */
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: scroll 12s linear infinite;
+
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 .login-btn {
   background: #d27667;
   color: white;
@@ -361,6 +404,10 @@ header {}
     padding: 0 1rem;
   }
 
+  /* .marquee-container{
+    margin-top: 180px;
+  } */
+
   .scroll-btn {
     display: none;
   }
@@ -581,11 +628,18 @@ footer .social-links a:hover {
     font-size: 1.6rem;
   }
 
+  .marquee-container {
+    margin-top: 103px;
+
+  }
+
+
+
   .hero p {
     font-size: 1rem;
   }
 
-  .hero video{
+  .hero video {
     display: none;
     visibility: hidden;
   }
