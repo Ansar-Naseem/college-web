@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Naaz Collection</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+    <div id="orderSummary"></div>
+
+    <div class="payment-method">
+      <label><input type="radio" name="payment" value="cod" checked> Cash on Delivery</label>
+      <label><input type="radio" name="payment" value="upi"> UPI</label>
+      <label><input type="radio" name="payment" value="card"> Credit/Debit Card</label>
+    </div>
+
+    <div id="paymentDetails" class="payment-details"></div>
+
+    <button class="place-order-btn" id="placeOrderBtn">Place Order</button>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const orderSummary = document.getElementById('orderSummary');
+    let total = 0;
+
+    cart.forEach(item => {
+      orderSummary.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
+      total += item.price;
+    });
+    orderSummary.innerHTML += `<strong>Total: ₹${total}</strong>`;
+
+    // Payment method change
+    document.querySelectorAll('input[name="payment"]').forEach(radio => {
+      radio.addEventListener('change', showPaymentFields);
+    });
+
+    function showPaymentFields() {
+      const selected = document.querySelector('input[name="payment"]:checked').value;
+      const details = document.getElementById('paymentDetails');
+      details.innerHTML = '';
+
+      if (selected === 'upi') {
+        details.innerHTML = '<input type="text" placeholder="Enter UPI ID">';
+      } else if (selected === 'card') {
+        details.innerHTML = `
+          <input type="text" placeholder="Card Number">
+          <input type="text" placeholder="Expiry Date (MM/YY)">
+          <input type="text" placeholder="CVV">
+        `;
+      }
+    }
+
+    document.getElementById('placeOrderBtn').addEventListener('click', () => {
+      alert('Order placed successfully!');
+      localStorage.removeItem('cart');
+      window.location.href = 'success.html';
+    });
+  </script>
+</body>
+</html>
