@@ -587,6 +587,17 @@ footer .social-links a:hover {
 }
 
 
+#checkoutBtn{
+        margin-top: 30px;
+    border: none;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+}
+
+
 /* Responsive Navigation */
 @media (max-width: 768px) {
   nav {
