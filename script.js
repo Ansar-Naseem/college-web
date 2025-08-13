@@ -221,3 +221,39 @@ function renderProductArray(arr, container) {
     container.appendChild(card);
   });
 }
+
+// Update cart display function
+function updateCartDisplay() {
+  const cartItemsDiv = document.getElementById('cartItems');
+  const emptyCartMsg = document.getElementById('emptyCartMsg');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const cartTotal = document.getElementById('cartTotal');
+
+  cartItemsDiv.innerHTML = '';
+  let total = 0;
+
+  if (cart.length === 0) {
+    emptyCartMsg.style.display = 'block';
+    checkoutBtn.style.display = 'none';
+    cartTotal.textContent = '';
+    return;
+  }
+
+  emptyCartMsg.style.display = 'none';
+  checkoutBtn.style.display = 'block';
+
+  cart.forEach(item => {
+    const itemDiv = document.createElement('div');
+    itemDiv.textContent = `${item.name} - ₹${item.price}`;
+    cartItemsDiv.appendChild(itemDiv);
+    total += item.price;
+  });
+
+  cartTotal.textContent = `Total: ₹${total}`;
+}
+
+// Checkout button click
+document.getElementById('checkoutBtn').addEventListener('click', function () {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = 'checkout.html';
+});
