@@ -256,6 +256,12 @@ nav .icon:hover {
   background-color: #0056b3;
 }
 
+@media(max-width: 1113px) {
+  .slides{
+    top: 100px;
+    z-index: 100;
+  }
+}
 /* Responsive */
 @media(max-width: 600px) {
   #cartPanel {
@@ -264,6 +270,92 @@ nav .icon:hover {
     top: 70px;
     max-height: 300px;
   }
+}
+
+.bigbigimage {
+  display: flex;
+  gap: 37.5rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  /* scrollbar-width: none; */
+}
+
+.bigimage img {
+  border-radius: 10px;
+  /* border: 11px solid black; */
+  height: 70vh;
+  width: 60vw;
+  overflow-y: scroll;
+  margin: 10px 10px;
+
+
+}
+
+.slider {
+  position: relative;
+  width: 20%;
+  min-width: 100px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Arrows */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots .active {
+  background: #333;
 }
 
 /* Hero Section */
@@ -387,16 +479,101 @@ nav .icon:hover {
   right: 0;
 }
 
-.hero video {
+/* .hero video {
   position: fixed;
   right: 60px;
   height: 30vh;
   bottom: 0;
   width: 20vw;
-  /* border: 10px solid gray; */
+
   border-radius: 100px;
   z-index: 1;
+} */
+
+/* Container holds video + button */
+.video-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 20vw;
+  max-width: 350px;
+  min-width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  z-index: 9999;
 }
+
+/* Video */
+#heroVideo {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Close button */
+#cutVideoBtn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s;
+}
+
+#cutVideoBtn:hover {
+  background: darkred;
+}
+
+/* Video container */
+/* .video-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 20vw;
+  max-width: 350px;
+  min-width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  cursor: grab;
+} */
+
+/* Video itself */
+/* #heroVideo {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Close button */
+/* #cutVideoBtn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+} */
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
