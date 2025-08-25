@@ -257,3 +257,86 @@ document.getElementById('checkoutBtn').addEventListener('click', function () {
   localStorage.setItem('cart', JSON.stringify(cart));
   window.location.href = 'checkout.html';
 });
+
+
+const videoBox = document.getElementById("videoBox");
+const cutBtn = document.getElementById("cutVideoBtn");
+
+// ✅ Close button hides everything
+cutBtn.addEventListener("click", () => {
+  videoBox.style.display = "none";
+});
+
+// ✅ Dragging feature
+let isDragging = false;
+let offsetX, offsetY;
+
+videoBox.addEventListener("mousedown", (e) => {
+  // prevent dragging when clicking close button
+  if (e.target.id === "cutVideoBtn") return;
+
+  isDragging = true;
+  offsetX = e.clientX - videoBox.getBoundingClientRect().left;
+  offsetY = e.clientY - videoBox.getBoundingClientRect().top;
+  videoBox.style.cursor = "grabbing";
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    videoBox.style.left = `${e.clientX - offsetX}px`;
+    videoBox.style.top = `${e.clientY - offsetY}px`;
+    videoBox.style.right = "auto";
+    videoBox.style.bottom = "auto";
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  videoBox.style.cursor = "grab";
+});
+
+const slides = document.querySelector(".slides");
+const images = document.querySelectorAll(".slides img");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const dotsContainer = document.querySelector(".dots");
+
+let index = 0;
+const total = images.length;
+
+// Create dots
+for (let i = 0; i < total; i++) {
+  let dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+  dot.addEventListener("click", () => goToSlide(i));
+}
+
+const dots = document.querySelectorAll(".dots span");
+
+function updateSlide() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function goToSlide(i) {
+  index = i;
+  updateSlide();
+}
+
+function nextSlide() {
+  index = (index + 1) % total;
+  updateSlide();
+}
+
+function prevSlide() {
+  index = (index - 1 + total) % total;
+  updateSlide();
+}
+
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlide);
+
+// Auto slide every 3s
+setInterval(nextSlide, 3000);
